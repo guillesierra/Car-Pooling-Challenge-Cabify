@@ -1,0 +1,7 @@
+version: '3'
+services:
+  pooling:
+    image: car-pooling-challenge:latest
+  harness:
+    image: cabify/challenge:latest
+    command: /harness --address http://pooling:8080 "${CABIFY_CHALLENGE_TESTCASE:-acceptance}"
